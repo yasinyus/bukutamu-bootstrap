@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+ <style type="text/css">
+ .myButton {
+	background-color:#44c767;
+	-moz-border-radius:28px;
+	-webkit-border-radius:28px;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+	background-color:#5cbf2a;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}	
+
+.back { 
+background: url('background.png') no-repeat center center fixed;
+
+-moz-background-size: cover;
+
+-webkit-background-size: cover;
+
+-o-background-size: cover;
+
+background-size: cover;
+ 
+ }
+.tulisan {
+    position: fixed;
+}
+
+}  
+
+
+ </style> 
+</head>
+<div class="tulisan">
+<a href="index.php" class="myButton">Kembali Ambil Foto</a>
+</div>
+<body>
+	<marquee behavior="scroll" height="100%" width="90%" direction="up" onmouseover="stop()" onmouseout="start()"><iframe onmouseover="stop()" onmouseout="start()" src="list2.php" height="200%" width="100%"></iframe></marquee>
+</body>
+
+</html>

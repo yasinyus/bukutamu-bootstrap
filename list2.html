@@ -1,0 +1,105 @@
+<?php
+mysql_connect("localhost","root","") or die("Koneksi Gagal");
+mysql_select_db("ktm") or die("Database Tidak Ditemukan");
+
+?>
+
+<DOCTYPE html>
+	<head>
+		<style type="text/css">
+	.flat-table {
+		margin-bottom: 20px;
+		border-collapse:collapse;
+		font-family: 'Lato', Calibri, Arial, sans-serif;
+		border: none;
+                border-radius: 3px;
+               -webkit-border-radius: 3px;
+               -moz-border-radius: 3px;
+	}
+	.flat-table th, .flat-table td {
+		box-shadow: inset 0 -1px rgba(0,0,0,0.25), 
+			inset 0 1px rgba(0,0,0,0.25);
+	}
+	.flat-table th {
+		font-weight: normal;
+		-webkit-font-smoothing: antialiased;
+		padding: 1em;
+		color: rgba(0,0,0,0.45);
+		text-shadow: 0 0 1px rgba(0,0,0,0.1);
+		font-size: 1.5em;
+	}
+	.flat-table td {
+		color: #f7f7f7;
+		padding: 0.7em 1em 0.7em 1.15em;
+		text-shadow: 0 0 1px rgba(255,255,255,0.1);
+		font-size: 1.4em;
+	}
+	.flat-table tr {
+		-webkit-transition: background 0.3s, box-shadow 0.3s;
+		-moz-transition: background 0.3s, box-shadow 0.3s;
+		transition: background 0.3s, box-shadow 0.3s;
+	}
+	.flat-table-1 {
+		background: #336ca6;
+	}
+	.flat-table-1 tr:hover {
+		background: rgba(0,0,0,0.19);
+	}
+	.flat-table-2 tr:hover {
+		background: rgba(0,0,0,0.1);
+	}
+	.flat-table-2 {
+		background: #f06060;
+	}
+	.flat-table-3 {
+		background: #52be7f;
+	}
+	.flat-table-3 tr:hover {
+		background: rgba(0,0,0,0.1);
+	}
+</style>
+	</head>
+		<body bgcolor="#2c3e50" align="center">
+			<link href='http://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
+
+
+<table class="flat-table flat-table-3" align="center" >
+	<thead>
+		<th>No</th>
+		<th>Photo</th>
+		<th>ID</th>
+		<th>Nama</th>
+		<th>Jenis Kelamin</th>
+		<th>Perusahaan</th>
+		<th>Keperluan</th>
+		<th>Tanggal Masuk</th>
+	</thead>
+	<tbody>
+	<?php 
+          $no=1;
+          $result  = mysql_query("select * from tblmhs");
+          while($data=mysql_fetch_array($result)){
+          echo $data[nama];
+         ?>
+	
+		
+
+
+		<tr>
+			<td><?php echo $no; ?></td>
+			<td width="125px" valign="top"><img src="<?php echo $data['photo_url']; ?>" width="125"></td>
+			<td><?php echo $data['nim'];?></td>
+			<td><?php echo $data['nama'];?></<td>
+			<td><?php echo $data['jk'];?></td>
+			<td><?php echo $data['tempat'];?></td>
+			<td><?php echo $data['prodi'];?></td>
+			<td><?php echo $data['tanggal'];?></td>
+		</tr>
+		<?php
+		 $no++;
+		}
+          ?>
+	</tbody>
+</table>
+</body>
+</html>
